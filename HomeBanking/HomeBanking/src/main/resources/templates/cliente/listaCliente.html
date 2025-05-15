@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/16f8dd85c6.js" crossorigin="anonymous"></script>
+
+    <title>Lista Clientes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <strong>Home</strong>
+             <!-- Boton para el despliegue -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuprincipal"    aria-controls="menuprincipal" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-white bg-dark">
+                <h2>LISTA CLIENTES</h2>
+            </div>
+        </div>
+        <div class="card-body">
+                <table class="table table-striped table-responsive-sm table-bordered table-hover table-sm">
+                    <thead>
+                        <tr>
+							<th>ID</th>
+                            <th>NOMBRE</th>
+							<th>APELLIDO</th>
+							<th>DNI</th>
+                            <th>DOMICILIO</th>
+                            <th>EMAIL</th>
+                            <th>ESTADO</th>
+                            <th class="text-center" width="15%"><a class="btn btn-primary" th:href= "@{/altaCliente}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  th:each="client : ${cliente}">
+							<td th:text="${client.iD}"></td>
+                            <td th:text="${client.nombre}"></td>
+							<td th:text="${client.apellido}"></td>
+							<td th:text="${client.dni}"></td>
+							<td th:text="${client.domicilio}"></td>
+							<td th:text="${client.email}"></td>
+							<td th:text="${client.estado}"></td>
+                            <td>
+                                <span>
+                                    <p>
+                                        <a class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        <a class="btn btn-info btn-sm"><i class="fa fa-users" aria-hidden="true"></i></a>
+										<a class="btn btn-danger btn-sm"><i class="fa fa-user-times" aria-hidden="true"></i></a>
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-warning btn-sm disabled"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        <a class="btn btn-info btn-sm disabled"><i class="fa fa-users" aria-hidden="true"></i></a>
+										<a class="btn btn-danger btn-sm disabled"><i class="fa fa-user-times" aria-hidden="true"></i></a>
+                                    </p>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+</html>
