@@ -3,45 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">>
-    <link type="text/css" rel="stylesheet" th:href="@{/css/estilos.css}">
-    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link type="text/css" rel="stylesheet" href="css/estilos.css">
     <script src="https://kit.fontawesome.com/16f8dd85c6.js" crossorigin="anonymous"></script>
-    <title>Formulario Cliente</title>
-	<style>
-		.body{
-		    background-image: url(https://www.bna.com.ar/Images/internas/interna-homebanking.jpg);
-			height: 100vh;
-		    background-size: cover;
-		    background-position: center;
-		    min-height: 100px;
-		}
-		.row{
-		    border: 2px solid blue;
-		}
-		.container-fluid{
-		    border: 2px solid green;
-		}
-		.mt-0 {
-		    margin-top: 0 !important;
-		  }
-		.pt-0{
-		    padding: 0 !important;
-		}
-		.form-group{
-		  color: black;
-		  font-family: 'Numans', sans-serif;
-		  margin-bottom: 15px;
-		}
-	</style>
+    <title>Editar Cliente</title>
+	<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body class="body">
+<body>
     <div class="container">
         <div class="card">
             <div class="card-header text-white bg-dark">
-				<h2>FORMULARIO CLIENTES</h2>
+				<h2>CLIENTES</h2>
             </div>
         </div>
-        <form th:object="${cliente}" th:action="@{/guardar}" method="post">
+        <form th:object="${cliente}" th:action="@{/actualizar}" method="post">
 			<div class="form-row">
 			                <div class="form-group col-lg-6">
 			                    <label for="id">ID</label>
@@ -49,7 +23,7 @@
 			                        <div class="input-group-prepend">
 			                          <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
 			                        </div>
-			                        <input type="number" class="form-control" th:field="*{iD}" id="id" name="id" placeholder="ID" required>
+			                        <input type="number" class="form-control" th:field="*{iD}" id="id" name="id" placeholder="" required>
 			                    </div>
 			                </div>
 			                <div class="form-group col-lg-6">
@@ -58,7 +32,7 @@
 			                        <div class="input-group-prepend">
 			                          <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
 			                        </div>
-			                        <input type="text" class="form-control" th:field="*{User}" id="name" name="name" placeholder="Nombre de Usuario" required>
+			                        <input type="text" class="form-control" th:field="*{User}" id="name" name="name" placeholder="" required>
 			                    </div>
 			                </div>
 			            </div>
@@ -69,7 +43,7 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
                         </div>
-                        <input type="text" class="form-control" th:field="*{nombre}" id="name" name="name" placeholder="Nombre Completo" required>
+                        <input type="text" class="form-control" th:field="*{nombre}" id="name" name="name" placeholder="" required>
                     </div>
                 </div>
                 <div class="form-group col-lg-6">
@@ -78,7 +52,7 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
                         </div>
-                        <input type="text" class="form-control" th:field="*{apellido}" id="name" name="name" placeholder="Apellido" required>
+                        <input type="text" class="form-control" th:field="*{apellido}" id="name" name="name" placeholder="" required>
                     </div>
                 </div>
             </div>
@@ -90,7 +64,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></div>
                         </div>
-                        <input type="text" class="form-control" th:field="*{dni}" id="ident" placeholder="D.N.I" required>
+                        <input type="text" class="form-control" th:field="*{dni}" id="ident" placeholder="" required>
                     </div>
               </div>
               <div class="form-group col-lg-6">
@@ -99,7 +73,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i></div>
                     </div>
-                 <input type="text" class="form-control" th:field="*{domicilio}" id="inputAddress" placeholder="Domicilio" required>
+                 <input type="text" class="form-control" th:field="*{domicilio}" id="inputAddress" placeholder="" required>
               </div>
             </div>
             <div class="form-row col-lg-6 col-lg-12">
@@ -109,7 +83,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
                         </div>
-                        <input type="email" class="form-control" th:field="*{email}" id="inputEmail" placeholder="Correo Electronico" required>
+                        <input type="email" class="form-control" th:field="*{email}" id="inputEmail" placeholder="" required>
                     </div>
                 </div>
                 <div class="form-group col-lg-6">
@@ -126,7 +100,7 @@
                 </div>
             </div>
                 <div class="form-row mr-xl-auto col-lg-4" width="16" height="16">
-                    <button type="submit" class="btn btn-primary text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                    <button type="submit" class="btn btn-primary text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i> Actualizar</button>
                     <button class="btn btn-danger text-center"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</button>
                 </div>
        </form>

@@ -9,8 +9,8 @@ public interface InterCliente {
 
     void guardar(cliente clie);
     List<cliente> obtenerLista();
-    void modificarCliente();
-    cliente buscarCliente(int dni);
-    void eliminarCliente(int dni);
+    cliente buscarCliente(Integer iD);
+    void eliminarCliente(Integer iD);
+    void actualizacion(cliente client);
     
 }

@@ -1,7 +1,7 @@
 package com.Banco.HomeBanking.Entity;
 
 public class cliente {
-	private int ID;
+	private Integer ID;
 	private int dni;
 	private String User;
 	private String clave;
@@ -17,7 +17,7 @@ public class cliente {
 	}
 	
 
-	public cliente(int iD, int dni, String user, String clave, String nombre, String apellido, String domicilio,
+	public cliente(Integer iD, int dni, String user, String clave, String nombre, String apellido, String domicilio,
 			String email, String estado) {
 		super();
 		this.ID = iD;
@@ -32,12 +32,12 @@ public class cliente {
 	}
 
     
-	public int getID() {
+	public Integer getID() {
 		return ID;
 	}
 
 
-	public void setID(int iD) {
+	public void setID(Integer iD) {
 		ID = iD;
 	}
 

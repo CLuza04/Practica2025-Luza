@@ -17,26 +17,30 @@ public class ClienteImplent implements InterCliente {
 	public void guardar(cliente client) {
 		listaCliente.add(client);		
 	}
-	
-    @Override
-	public void modificarCliente() {
-		
-	}
 
+    @Override
+   	public void actualizacion(cliente clientActualizado) {
+   		for (int i = 0; i < listaCliente.size(); i++) {
+   			if (listaCliente.get(i).getID().equals(clientActualizado.getID())) {
+   				listaCliente.set(i, clientActualizado);
+   				break;
+   			}
+   		}
+   	}
 	@Override
-	public cliente buscarCliente(int dni) {
-	  for (cliente d : listaCliente) {
-		if (d.getDni()==dni) {
-		 return d;
+	public cliente buscarCliente(Integer iD) {
+	  for (cliente id : listaCliente) {
+		if (id.getID() == iD) {
+		 return id;
 		}
 	  }
 	return null;	
 	}
 
 	@Override
-	public void eliminarCliente(int dni) {
+	public void eliminarCliente(Integer iD) {
 	  for (int i = 0; i < listaCliente.size(); i++) {
-		if (listaCliente.get(i).getDni()==dni) {
+		if (listaCliente.get(i).getID() == iD) {
 			listaCliente.remove(i);
 			break;
 		}
